@@ -27,10 +27,20 @@ from openpyxl.utils.dataframe import dataframe_to_rows
 # CONFIG
 # ============================================================
 
-DAYS_BACK = 1
-# Belirli bir günü test etmek için YYYY-MM-DD gir.
-# Günlük otomatik kullanımda None yap: TARGET_DATE = None
-TARGET_DATE = "2026-05-14"
+# DAYS_BACK = 1
+# # Belirli bir günü test etmek için YYYY-MM-DD gir.
+# # Günlük otomatik kullanımda None yap: TARGET_DATE = None
+# TARGET_DATE = "2026-05-14"
+# MAX_NEWS = 100
+
+DAYS_BACK = 2
+
+# Günlük otomatik kullanım:
+TARGET_DATE = None
+
+# Eski tarih test etmek istersen:
+# TARGET_DATE = "2026-05-14"
+
 MAX_NEWS = 100
 
 LANG = "tr"
@@ -107,7 +117,7 @@ COMPANY_CONTEXT_BAD_WORDS = [
 
 OUTPUT_DIR = "data"
 CSV_FILE = os.path.join(OUTPUT_DIR, "haberler_final.csv")
-XLSX_FILE = os.path.join(OUTPUT_DIR, "haberler_final.xlsx")git --version
+XLSX_FILE = os.path.join(OUTPUT_DIR, "haberler_final.xlsx")
 
 HEADERS = {
     "User-Agent": (
