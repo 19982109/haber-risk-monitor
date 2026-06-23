@@ -2,7 +2,7 @@ name: Daily Haber Scraper
 
 on:
   schedule:
-    - cron: "0 5 * * *"
+    - cron: "0 5,9,13 * * *"
   workflow_dispatch:
 
 permissions:
@@ -15,6 +15,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Show run time
+        run: |
+          echo "UTC time:"
+          date -u
+          echo "Turkey time:"
+          TZ="Europe/Istanbul" date
 
       - name: Setup Python
         uses: actions/setup-python@v5
